@@ -133,7 +133,6 @@ void esCapicua(string s)
 
     cout << "Numero: " << ((is_digit) ? "SI" : "NO") << ", ";
     cout << "Palindromo: "<< ((es_capicua) ? "SI" : "NO") << "." << endl;
-
 }
 
 // Ejercicio 7
@@ -141,7 +140,8 @@ void esCapicua(string s)
 // Por ejemplo, n=4, da 0,1,2,3,4
 void numerosHasta(int n)
 {
-
+    for (int i = 0; i < n; i++) cout << i << ", "; 
+    cout << n << "." << endl;
 }
 
 // Ejercicio 8
