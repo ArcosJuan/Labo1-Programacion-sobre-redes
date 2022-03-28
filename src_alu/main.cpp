@@ -26,4 +26,5 @@ int main()
 	escaleraSimple(21);
 
 	cout << "Fibonacci: " << fibonacci(8);
+	esPerfecto(10);
 }

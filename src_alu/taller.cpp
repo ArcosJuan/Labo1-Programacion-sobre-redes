@@ -5,6 +5,7 @@
 #include <cmath>
 #include "taller.h"
 #include <vector>
+#include <set>
 #include <algorithm>
 
 using namespace std;
@@ -158,6 +159,9 @@ void escaleraSimple(int n)
     }
 }
 
+
+set<int> combinarFactores(vector<int> factores, int cElementos);
+
 // Ejercicio 9
 // Dado un 'n', dice si es numero perfecto o no
 // Los numeros perfectos son enteros tales que su valor
@@ -165,7 +169,35 @@ void escaleraSimple(int n)
 // Por ejemplo, 6 = 3+2+1... 28=1+2+4+7+14, etc...
 bool esPerfecto(int n)
 {
+    vector<int> myset = combinarFactores(descomponer(n), 3);
+    for (auto it = myset.begin(); it != myset.end(); ++it)
+        cout << ' ' << *it;
+    
+}
 
+// vector<int> divisores(int n)
+// {
+//     set<int> combinations;
+//     vector<int> factores = descomponer(n);
+//     for (int i = 0; i <= factores.length(); i++)
+//     {
+//         for (int j = )
+//     }
+
+// }
+
+vector<int> combinarFactores(vector<int> factores, int cElementos)
+{
+    vector<int> combinaciones = factores;
+    for(int i = 0; i <= cElementos; i++)
+    {
+        int largo = combinaciones.size();
+        for (int j = 0; j <= largo; j++)
+        {
+            combinaciones.insert(combinaciones.at(j));
+        }
+    }
+    return combinaciones;
 }
 
 // Ejercicio 10 (opcional)
