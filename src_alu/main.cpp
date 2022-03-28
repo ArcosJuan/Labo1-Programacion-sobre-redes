@@ -18,4 +18,6 @@ int main()
 	cout << "Es primo: "<< esPrimo(-4) << endl;
 
 	cout << "Primo gemelo: "<< primoGemelo(3) << endl;
+	
+	// esCapicua("121");
 }

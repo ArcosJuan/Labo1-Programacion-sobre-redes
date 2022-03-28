@@ -117,6 +117,22 @@ bool primoGemelo(int n)
 // Hint: Ver las funciones at() y isdigit() del tipo string.
 void esCapicua(string s)
 {
+    bool is_digit = false;
+    bool es_capicua = true;
+    for (int i = 0; i < (s.length() / 2); i++)
+    {
+        char digito_izquierda = s.at(i);
+        char digito_derecha = s.at(s.length() - (1 + i));
+
+        if (digito_izquierda != digito_derecha) es_capicua = false;
+        if (isdigit(digito_izquierda) || isdigit(digito_izquierda))
+        {
+            is_digit = true;
+        }
+    }
+
+    cout << "Numero: " << ((is_digit) ? "SI" : "NO") << ", ";
+    cout << "Palindromo: "<< ((es_capicua) ? "SI" : "NO") << "." << endl;
 
 }
 
