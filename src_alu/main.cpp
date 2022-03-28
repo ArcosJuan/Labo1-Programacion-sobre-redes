@@ -24,4 +24,6 @@ int main()
 	numerosHasta(21);
 
 	escaleraSimple(21);
+
+	cout << "Fibonacci: " << fibonacci(8);
 }

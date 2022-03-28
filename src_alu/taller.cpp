@@ -189,13 +189,27 @@ void pascal()
 
 }
 
-
 // Ejercicio 11 (opcional)
 // Dado un k positivo, devolver el k-esimo numero de la susesion de fibonacci.
 long fibonacci(int k)
 {
+    if (k >= 0)
+    {
+        long fn2 = 0;
+        long fn1 = 1;
+        if (!k) return fn2;
+        
+        for (int n = 2; n < k+1; n++)
+        {
+            long fn = fn1 + fn2;
+            fn2 = fn1;
+            fn1 = fn;
+        }
 
-}
+        return fn1;
+    }
+    else return -1;
+}   
 
 // Ejercicio 12 (opcional)
 // Dado un n PAR capturado por teclado, intenta ver si la Conjetura de Golbach es valida para ese n.
