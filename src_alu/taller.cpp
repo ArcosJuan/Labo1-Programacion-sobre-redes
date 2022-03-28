@@ -57,7 +57,8 @@ vector<int> descomponer(int number);
 // Dado un n por teclado, devuele true si y solo sí n es primo
 bool esPrimo(int n)
 {
-    return ((descomponer(n)).size() == 1);
+    if (n > 0) return ((descomponer(n)).size() == 1);
+    else return 0;
 }
 
 vector<int> descomponer(int number)
@@ -105,7 +106,7 @@ vector<int> descomponer(int number)
 // Q y P son primos gemelos si P=Q+2, por ejemlo 3 y 5, 5 y 7, 11 y 13...
 bool primoGemelo(int n)
 {  
-
+    return (esPrimo(n) && (esPrimo(n+2) || esPrimo(n-2)));
 }
 
 // Ejercicio 6

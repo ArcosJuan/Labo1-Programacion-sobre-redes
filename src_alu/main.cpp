@@ -7,13 +7,15 @@ using namespace std;
 
 int main()
 {
-	cout << "Función divide: " << divide(7,3) << endl;
+	cout << "divide: " << divide(7,3) << endl;
 
-	cout << "Función mayor: " << mayor(7,2) << endl;
+	cout << "mayor: " << mayor(7,2) << endl;
 
 	cout << "Factorial por copia: " << factorialPorCopia(10) << endl;
 
 	// factorialPorTeclado();
 
-	cout << esPrimo(4) << endl;
+	cout << "Es primo: "<< esPrimo(-4) << endl;
+
+	cout << "Primo gemelo: "<< primoGemelo(3) << endl;
 }
