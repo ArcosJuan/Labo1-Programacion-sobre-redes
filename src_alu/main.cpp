@@ -22,4 +22,6 @@ int main()
 	esCapicua("121");
 
 	numerosHasta(21);
+
+	escaleraSimple(21);
 }

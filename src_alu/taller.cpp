@@ -154,7 +154,16 @@ void numerosHasta(int n)
 // Hint: Usar la función anterior
 void escaleraSimple(int n)
 {
+    for (int i = 0; i <= n; i++)
+    {
+        // ACLARACIÓN: 
+        // Podría haberse utilizado la función numerosHasta() 
+        // pero se evitó a fin de mantener la fidelidad
+        // con el formato del ejemplo.
 
+        for (int j = 0; j < i; j++) cout << j << " "; 
+        cout << i << endl;
+    }
 }
 
 // Ejercicio 9
