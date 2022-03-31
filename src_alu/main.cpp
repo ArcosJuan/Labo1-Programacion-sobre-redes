@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	cout << "divide: " << divide(7,3) << endl;
+	cout << "divide: " << divide(3,7) << endl;
 
 	cout << "mayor: " << mayor(7,2) << endl;
 
@@ -25,6 +25,5 @@ int main()
 
 	escaleraSimple(21);
 
-	cout << "Fibonacci: " << fibonacci(8);
-	esPerfecto(10);
+	cout << "Es perfecto: "  << esPerfecto(8) << endl;
 }

@@ -18,7 +18,7 @@ using namespace std;
 // Dados enteros a y b, decide si 'a' divide a 'b'.
 bool divide(int a, int b)
 {
-    return a % b == 0;
+    return b % a == 0;
 }
 
 // Ejercicio 1
@@ -78,7 +78,7 @@ vector<int> descomponer(int number)
             bool fb = true;
             for (int n = resto; n > 1; n--)
             {
-                if (divide(factor, n))
+                if (divide(n, factor))
                 {
                     factores_descompuestos.push_back(n);
                 
@@ -160,8 +160,8 @@ void escaleraSimple(int n)
 }
 
 
-set<int> combinarFactores(vector<int> factores, int cElementos);
-
+set<int> multiplicarSets(set<int> a, set<int> b);
+set<int> getDivisores(int n);
 // Ejercicio 9
 // Dado un 'n', dice si es numero perfecto o no
 // Los numeros perfectos son enteros tales que su valor
@@ -169,35 +169,41 @@ set<int> combinarFactores(vector<int> factores, int cElementos);
 // Por ejemplo, 6 = 3+2+1... 28=1+2+4+7+14, etc...
 bool esPerfecto(int n)
 {
-    vector<int> myset = combinarFactores(descomponer(n), 3);
-    for (auto it = myset.begin(); it != myset.end(); ++it)
-        cout << ' ' << *it;
-    
+    set<int> divisores = getDivisores(n);
+    int suma = 0;
+    for (int numero:divisores) suma += numero;
+    return suma == n;
 }
 
-// vector<int> divisores(int n)
-// {
-//     set<int> combinations;
-//     vector<int> factores = descomponer(n);
-//     for (int i = 0; i <= factores.length(); i++)
-//     {
-//         for (int j = )
-//     }
-
-// }
-
-vector<int> combinarFactores(vector<int> factores, int cElementos)
+set<int> getDivisores(int n)
 {
-    vector<int> combinaciones = factores;
-    for(int i = 0; i <= cElementos; i++)
+    vector<int> a = descomponer(n);
+    set<int> factores(a.begin(), a.end());
+    set<int> combinaciones = {1};
+    int repeticiones = log10(n) / log10(a[0]) ;
+
+    for (int i = 0; i<= repeticiones; i++)
     {
-        int largo = combinaciones.size();
-        for (int j = 0; j <= largo; j++)
-        {
-            combinaciones.insert(combinaciones.at(j));
-        }
+        set<int> nuevas_combinaciones = multiplicarSets(factores, combinaciones);
+        combinaciones.insert(nuevas_combinaciones.begin(), nuevas_combinaciones.end());
+    }
+    
+    for (int combinacion:combinaciones)
+    {
+        if(combinacion > n/2 || not divide(combinacion, n)) combinaciones.erase(combinacion);
     }
     return combinaciones;
+}
+
+
+set<int> multiplicarSets(set<int> a, set<int> b)
+{
+    set<int> c;
+    for (int i:a)
+    {
+        for (int j:b) c.insert(i * j);
+    }
+    return c;
 }
 
 // Ejercicio 10 (opcional)
