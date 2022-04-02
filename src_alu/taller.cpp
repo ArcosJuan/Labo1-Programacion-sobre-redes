@@ -177,6 +177,7 @@ bool esPerfecto(int n)
 
 set<int> getDivisores(int n)
 {
+    if (esPrimo(n)) return set<int>{1, n};
     vector<int> a = descomponer(n);
     set<int> factores(a.begin(), a.end());
     set<int> combinaciones = {1};

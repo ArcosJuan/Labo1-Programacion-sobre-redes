@@ -25,5 +25,5 @@ int main()
 
 	escaleraSimple(21);
 
-	cout << "Es perfecto: "  << esPerfecto(8) << endl;
+	cout << "Es perfecto: "  << esPerfecto(2) << endl;
 }
